@@ -24,7 +24,7 @@ namespace CourseLibrary.API.Controllers
                 throw new ArgumentNullException(nameof(mapper));
         }
 
-        [HttpGet("{authorIds}", Name = "GetAuthorCollection")]
+        [HttpGet("({authorIds})", Name = "GetAuthorCollection")]
         public async Task<ActionResult<IEnumerable<AuthorForCreationDto>>> GetAuthorCollection(
             [ModelBinder(BinderType = typeof(ArrayModelBinder))]
             [FromRoute] IEnumerable<Guid> authorIds)
